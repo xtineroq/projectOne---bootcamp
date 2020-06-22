@@ -1,0 +1,95 @@
+/* Login Page */
+body {
+    background: url(../img/Background/LandingPage.jpg) top center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Quotes and buttons */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+header h2 {
+    font-family: 'Rokkitt', serif;
+    color: darkgrey;
+    padding-left: 15px;
+}
+
+header span {
+    color: orange;
+}
+
+blockquote {
+    margin: 100px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    border-left: none;
+}
+
+/* Font Awesome Quotation Mark */
+.fas {
+    font-size: x-large;
+    color: black;
+}
+
+#quote {
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.signIn {
+    text-align: center;
+}
+
+/* Modal Style */
+.reveal {
+    border-radius: 16px 16px 16px 16px;
+    background-color: rgba(0, 0, 0, 0.829);
+    border: none;
+    outline: none;
+}
+
+.reveal h3 {
+    color: white;
+}
+
+.modalInput {
+    width: 70%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 2px solid orange;
+    outline: none;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.modalIcon {
+    width: 26px;
+    text-align: center;
+    color: white;
+}
+
+.right {
+    background-color: darkgray;
+}
+
+#modalBtn {
+    margin-top: 10px;
+    width: 100%;
+    color: orange;
+    font-weight: bold;
+    font-size: 16px;
+}
