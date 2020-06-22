@@ -27,5 +27,9 @@ Ben - Backend development (API + Functionality)
 
 `````````````
 Christine & Yi - Frontend & Backend development 
+<<<<<<< HEAD
 
 `````````````
+=======
+`````````````
+>>>>>>> 6c08fdd28795e43f8ccc58b80c8bad7e040178b3
