@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Fitness Planner</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="../projectOne---bootcamp/assets/img/favicon/favicon.ico" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <!-- PFP CSS -->
+    <link rel="stylesheet" href="../projectOne---bootcamp/assets/css/loginStyle.css">
+</head>
+
+<body>
+
+    <!-- App Name -->
+    <header>
+        <h2><span>P</span>ersonal <span>F</span>itness <span>P</span>lanner</h2>
+    </header>
+
+    <!-- Landing Page -->
+    <main>
+        <div class="container">
+            <!-- Quotes -->
+            <div class="row">
+                <blockquote>
+                    <i class="fas fa-quote-left"></i>
+                        <span id="quote"> 
+                            Lorem ipsum dolor    sit amet, consectetur
+                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </span>
+                    <i class="fas fa-quote-right"></i>
+                </blockquote>
+            </div>
+            <!-- NewUser&Login Button -->
+            <div class="row">
+                <div class="signIn">
+                    <button class="button warning" type="button" data-open="newUserModal">New User</button>
+                    <button class="button secondary" type="button" data-open="signInModal">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- New User Modal -->
+    <div class="tiny reveal" id="newUserModal" data-animation-in="fade-in" data-reveal>
+        <!-- Modal title -->
+        <h3>Account Creation</h3>
+
+        <!-- Username -->
+        <div><i class="fas fa-user modalIcon"></i>
+            <input class="modalInput" type="text" placeholder="Username">
+        </div>
+        <!-- Password -->
+        <div><i class="fas fa-unlock modalIcon"></i>
+            <input class="modalInput" type="password" placeholder="Password" data-tooltip class="top" tabindex="2"
+                title="Your password must have at least 10 characters, a number">
+        </div>
+        <!-- Confirm Password -->
+        <div><i class="fas fa-unlock modalIcon"></i>
+            <input class="modalInput" type="password" aria-describedby="passwordHelpText"
+                placeholder="Confirm Password">
+        </div>
+        <!-- Login Button -->
+        <button class="button secondary" id="modalBtn" type="button" data-open="login">LOGIN</button>
+        <!-- Close by "x" -->
+        <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="tiny reveal" id="signInModal" data-animation-in="fade-in" data-reveal>
+        <!-- Modal title -->
+        <h3>Sign In</h3>
+
+        <!-- Username -->
+        <div><i class="fas fa-user modalIcon"></i>
+            <input class="modalInput" type="text" placeholder="Username">
+        </div>
+        <!-- Password -->
+        <div><i class="fas fa-unlock modalIcon"></i>
+            <input class="modalInput" type="password" placeholder="Password">
+        </div>
+        <!-- Login Button -->
+        <button class="button secondary" id="modalBtn" type="button" data-open="login">Login</button>
+        <!-- Close by "x" -->
+        <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- jquery  script link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
+    <script>
+        //Foundation FrameWork to activate modal
+        $(document).foundation();
+    </script>
+
+</body>
+
+</html>
