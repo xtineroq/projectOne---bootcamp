@@ -12,7 +12,7 @@ First Project for Bootcamp
 `````````````
 Suji - Frontend and Backend development, Project Management (User Stories, Acceptance Criteria, etc)
 
-Yi - Backend API for quotes
+Ben - Backend API for quotes
 `````````````
 
 ##### Personal Setting
@@ -26,7 +26,5 @@ Ben - Backend development (API + Functionality)
 ##### Personal Planner 
 
 `````````````
-Christine & Yi - Frontend 
-
-Ben & Yi - Backend development 
+Christine & Yi - Frontend & Backend development 
 `````````````
