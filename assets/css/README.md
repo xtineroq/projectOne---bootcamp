@@ -12,4 +12,19 @@
 ###### Class
 
 - signIn
-- modalInput 
+- modalInput
+
+## Personal Planner Page
+
+###### ID
+
+- container
+- tabslist
+- tab1, tab2, etc.
+
+###### Class
+
+- tabs-nav
+- tabs-content
+- active
+- workout
