@@ -40,7 +40,7 @@ blockquote {
     color: black;
 }
 
-#quote {
+#quote, #author {
     color: black;
     font-weight: bold;
     font-size: x-large;
