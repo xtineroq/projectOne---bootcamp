@@ -53,7 +53,8 @@ blockquote {
 /* Modal Style */
 .reveal {
     border-radius: 16px 16px 16px 16px;
-    background-color: rgba(0, 0, 0, 0.829);
+    /* background-color: rgba(0, 0, 0, 0.829); */
+    background-color: cadetblue;
     border: none;
     outline: none;
 }
@@ -82,14 +83,17 @@ blockquote {
     color: white;
 }
 
-.right {
-    background-color: darkgray;
+.checkboxModal{
+    margin: 5px 0px 0px 30px;
 }
 
-#modalBtn {
+#checkboxModal {
+    color: white;
+}
+
+.modalBtn {
     margin-top: 10px;
     width: 100%;
-    color: orange;
     font-weight: bold;
     font-size: 16px;
 }

@@ -58,20 +58,23 @@
 
         <!-- Username -->
         <div><i class="fas fa-user modalIcon"></i>
-            <input class="modalInput" type="text" placeholder="Username">
+            <input id="modalUsername" class="modalInput" type="text" placeholder="Username" required="">
+            <span class="error_form" id="usernameError"></span>
         </div>
         <!-- Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
-            <input class="modalInput" type="password" placeholder="Password" data-tooltip class="top" tabindex="2"
-                title="Your password must have at least 10 characters, a number">
+            <input id="modalPass" class="modalInput modalPass" type="text" placeholder="Password" data-tooltip class="top" tabindex="2"
+                title="Your password must have at least 8 characters" required="">
+            <span class="error_form" id="passwordError"></span>
         </div>
         <!-- Confirm Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
-            <input class="modalInput" type="password" aria-describedby="passwordHelpText"
-                placeholder="Confirm Password">
+            <input id="modalConfirmPass" class="modalInput" type="text" placeholder="Confirm Password" required="">
+            <span class="error_form" id="confirmPasswordError"></span>
         </div>
+
         <!-- Login Button -->
-        <button class="button secondary" id="modalBtn" type="button" data-open="login">LOGIN</button>
+        <button class="button secondary modalBtn" type="button" data-open="login">LOGIN</button>
         <!-- Close by "x" -->
         <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -89,10 +92,16 @@
         </div>
         <!-- Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
-            <input class="modalInput" type="password" placeholder="Password">
+            <input id="viewPassword" class="modalInput modalPass" type="password" placeholder="Password">
         </div>
+
+        <!-- Checkbox Show Password -->
+        <div class="checkboxModal">
+            <input id="checkPass" type="checkbox"><label id="checkboxModal">Show Password</label>
+        </div>
+
         <!-- Login Button -->
-        <button class="button secondary" id="modalBtn" type="button" data-open="login">Login</button>
+        <button class="button secondary modalBtn" type="button" data-open="login">LOGIN</button>
         <!-- Close by "x" -->
         <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -108,8 +117,138 @@
     <script>
         //Foundation FrameWork to activate modal
         $(document).foundation();
+
+        //Variables for Show Password
+        var $viewPassword = $("#viewPassword");
+        var $checkPass = $("#checkPass");
+        var viewLoginPwd = false;
+        
+        //When checkbox is clicked
+        $checkPass.on("click", function() {
+
+            if (viewLoginPwd === false) {
+
+                $viewPassword.attr("type", "text");
+                
+                viewLoginPwd = true;
+
+            } else if (viewLoginPwd === true) {
+
+                $viewPassword.attr("type", "password");
+
+                viewLoginPwd = false;
+            }
+        });
+
+        //Save New User Details
+        var $loginBtn = $(".modalBtn");
+        var $modalPass = $(".modalPass");
+        var $modalInput = $(".modalInput");
+        var newPwd = $modalInput.eq(1).val();
+        var confirmPwd = $modalInput.eq(2).val();
+
+        $loginBtn.on("click", function(){
+
+            usernameError = false;
+            passwordError = false;
+            confirmPasswordError = false;
+
+            checkUsername();
+            checkPassword();
+            checkConfirmPassword();
+
+            //Clear input values
+            // for (var i=0; i<5; i++) {
+            // $modalInput.eq(i).val("");
+            // }
+
+            if (usernameError === false && passwordError === false && confirmPasswordError === false) {
+                window.location.replace("PersonalSetting.html");
+
+               return true;
+            } else {
+               alert("Please Fill the form Correctly");
+               return false;
+            }
+
+        });
+
+        //jquery validation variables
+        var $modalUsername = $("#modalUsername");
+        var $usernameError = $("#usernameError");
+        var $modalPass = $("#modalPass");
+        var $passwordError = $("#passwordError");
+        var $modalConfirmPass = $("#modalConfirmPass");
+        var $confirmPasswordError = $("#confirmPasswordError");
+        //Boolean validation variable
+        var usernameError = false;
+        var passwordError = false;
+        var confirmPasswordError = false;
+
+        //Hide Error Message
+        $usernameError.hide();
+        $passwordError.hide();
+        $confirmPasswordError.hide();
+
+        //Function to check Username
+        function checkUsername() {
+            var pattern = /^[a-zA-Z]*$/;
+            var username = $modalUsername.val();
+            if (pattern.test(username) && username !== '') {
+               $usernameError.hide();
+               $modalUsername.css("border-bottom","2px solid #34F458");
+            } else {
+               $usernameError.html("Should contain only letters");
+               $usernameError.show();
+               $modalUsername.css("border-bottom","2px solid #F90A0A");
+               usernameError = true;
+            }
+         }
+
+         //Function to check Password length 
+         function checkPassword() {
+            var passwordLength = $modalPass.val().length;
+            if (passwordLength < 8) {
+               $passwordError.html("Must be at least 8 Characters");
+               $passwordError.show();
+               $modalPass.css("border-bottom","2px solid #F90A0A");
+               passwordError = true;
+            } else {
+               $passwordError.hide();
+               $modalPass.css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         //Function to check Password Match
+         function checkConfirmPassword() {
+            var password = $modalPass.val();
+            var confirmPassword = $modalConfirmPass.val();
+            if (password !== confirmPassword) {
+               $confirmPasswordError.html("Passwords Did not Matched");
+               $confirmPasswordError.show();
+               $modalConfirmPass.css("border-bottom","2px solid #F90A0A");
+               confirmPasswordError = true;
+            } else {
+               $confirmPasswordError.hide();
+               $modalConfirmPass.css("border-bottom","2px solid #34F458");
+            }
+         }
+        
+        //When user clicks away from input field run check function (Only for NewUser Login Modal)
+        $modalUsername.focusout(function(){
+            checkUsername();
+         });
+         $modalPass.focusout(function() {
+            checkPassword();
+         });
+         $modalConfirmPass.focusout(function() {
+            checkConfirmPassword();
+         });
+
     </script>
 
 </body>
+        <!-- // localStorage.setItem("Username", "");
 
+        // localStorage.setItem("Password", ""); -->
 </html>

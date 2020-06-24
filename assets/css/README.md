@@ -6,10 +6,12 @@
 
 - quote
 - newUserModal
-- modalBtn
 - signInModal
+- checkboxModal
 
 ###### Class
 
 - signIn
 - modalInput 
+- checkboxModal
+- modalBtn
