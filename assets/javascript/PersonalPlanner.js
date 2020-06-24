@@ -1,5 +1,8 @@
 $(document).foundation();
 
+// Grab user input from local storage here/////////////////////////////
+// var numberWeeks;
+// var numberDays;
 
 $( document ).ready(function() {
     // User input ************************ to be updated to retrieve from Settings page input
@@ -14,14 +17,18 @@ $( document ).ready(function() {
 
         // Create anchor tag within tab
         var newTabAnchor = $(`<a href="#panel${i}"
-        role="tab" aria-controls="panel${i}" id="panel${i}-label" tabindex="${1-i}"></a>`);
+        role="tab"
+        aria-controls="panel${i}"
+        id="panel${i}-label"
+        tabindex="${1-i}">
+        </a>`);
      
-        // If this is the first tab, add these attributes
+        // If this is the first tab, add these attributes to display it
         if( i === 1 ){
             newTab.addClass('is-active');
             newTabAnchor.attr("aria-selected", "true");
         } else {
-        // Else, add these attributes
+        // Else, add these attributes to hide
             newTabAnchor.attr("data-tabs-target", `panel${i}`);
             newTabAnchor.attr("aria-selected", "false");
         }
@@ -44,19 +51,28 @@ $( document ).ready(function() {
             // Create day title
             newTabPanel.append($(`<h3>Day ${j}</h3>`));
 
-            // Create day div
+            // Create day div to contain workout
             var newWorkoutDiv = $("<div class='workoutDiv'></div>");
+
+            /////////////////////////////////////////////////////////////
+            /////////////// Add content for workouts here ///////////////
+            /////////////////////////////////////////////////////////////
 
             // Create switch to mark workout completed
             var newWorkoutSwitch = $('<div class="switch tiny"><input class="switch-input" id="tinySwitch" type="checkbox" name="exampleSwitch"><label class="switch-paddle" for="tinySwitch"><span class="show-for-sr">Tiny Sandwiches Enabled</span></label></div>');
             newWorkoutDiv.append(newWorkoutSwitch);
 
-            // Insert workout info ************** to be updated to draw from API
             newTabPanel.append(newWorkoutDiv);
         }
 
         // Display tab panel
         $(".tabs-content").append(newTabPanel);
     }
+
+    var exerciseName = $("<p>Exercise name here</p>");
+    var exerciseSetsReps = $("<p>5 sets x 5 reps</p>");
+    var exerciseDescription = $("<p>Exercise description here Exercise description here Exercise description here Exercise description here</p>");
+
+    $(".workoutDiv").prepend(exerciseName, exerciseSetsReps, exerciseDescription);
 
 });

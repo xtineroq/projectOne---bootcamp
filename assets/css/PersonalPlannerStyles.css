@@ -1,0 +1,44 @@
+/* Entire Settings Page */
+body {
+  background: url(../img/Background/LandingPage.jpg) top center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* PFP Styling */
+
+/*************** Header ***************/
+header h2 {
+  font-family: "Rokkitt", serif;
+  color: darkgrey;
+  padding-left: 15px;
+}
+
+header span {
+  color: orange;
+}
+
+/*************** Main ***************/
+main {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20px auto;
+}
+
+/*************** Tabs ***************/
+#example-tabs {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+}
+
+.tabs-title > a:hover,
+.tabs-title > a:focus {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.tabs-title > a[aria-selected="true"] {
+  background-color: white;
+}
