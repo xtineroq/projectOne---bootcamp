@@ -18,13 +18,19 @@
 
 ###### ID
 
-- container
-- tabslist
-- tab1, tab2, etc.
+- example-tabs
+- panel1-label, panel2-label, etc.
+- panel1, panel2, etc.
+- tinySwitch
 
 ###### Class
 
-- tabs-nav
+- tabs
 - tabs-content
-- active
-- workout
+- tabs-title
+- is-active
+- tabs-panel
+- workoutDiv
+- switch
+- tiny
+- switch-input
