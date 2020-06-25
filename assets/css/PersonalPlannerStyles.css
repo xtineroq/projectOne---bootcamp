@@ -30,7 +30,6 @@ main {
 
 /*************** Tabs ***************/
 #example-tabs {
-  /* background-color: rgba(255, 255, 255, 0.75); */
   border: none;
 }
 
@@ -40,6 +39,8 @@ main {
 
 .tabs a {
   color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .tabs-title > a:hover,
@@ -49,30 +50,78 @@ main {
 }
 
 .tabs-title > a[aria-selected="true"] {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);
   color: rgb(56, 56, 56);
 }
 
-.tabs-title {
-  background-color: rgba(145, 145, 145, 0.85);
+.tabs-title:not(.is-active) {
+  background-color: rgba(78, 78, 78, 0.75);
 }
 
 /*************** Tab Panels ***************/
+.tabs-content {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
 .tabs-panel {
   margin: 0px;
   padding: 10px;
+  color: white;
 }
 
 .dayDiv {
-  background-color: rgba(145, 145, 145, 0.1);
-  margin-bottom: 10px;
+  background-color: rgba(80, 80, 80, 0.9);
+  margin-top: 30px;
   padding: 10px;
 }
 
+.dayTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.dayDiv h4 {
+  background-image: linear-gradient(orange, rgb(194, 126, 0));
+  font-family: "Rokkitt", serif;
+  font-size: 24px;
+  transform: translateY(-25px);
+  padding: 1px 70px 2px 70px;
+  border-radius: 2px;
+}
+
+/*************** Workout div (exercise name, reps, image, description) ***************/
+.exerciseNameDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .exerciseName {
-  border: 2px solid rgba(145, 145, 145, 0.85);
-  padding: 5px 6px 5px 5px;
+  border: 2px solid orange;
+  padding: 3px 6px 5px 5px;
   display: inline-block;
+  font-size: 20px;
+}
+
+.exerciseReps {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.exerciseDescDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.exerciseDescDiv img {
+  border-radius: 5px;
+  width: 20%;
+}
+
+.exerciseDesc {
+  margin-left: 10px;
+  font-size: 16px;
 }
 
 /*************** Checkbox ***************/
@@ -82,18 +131,13 @@ main {
 }
 
 .checkbox label {
-  color: rgba(82, 82, 82);
+  color: white;
+  font-size: 12px;
+  display: flex;
+  padding-top: 2px;
 }
 
 [type="checkbox"] {
-  margin-top: 5px;
+  margin: 5px 0px;
   transform: scale(1.5);
 }
-
-/* .switch-paddle {
-  border-radius: 5px;
-}
-
-input:checked ~ .switch-paddle {
-  background-color: orange;
-} */

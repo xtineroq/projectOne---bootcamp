@@ -1,14 +1,12 @@
 $(document).foundation();
 
-// Grab user input from local storage here/////////////////////////////
-// var numberWeeks;
-// var numberDays;
 
 $( document ).ready(function() {
-    // User input ************************ to be updated to retrieve from Settings page input
+
+    //////////// Grab user input from local storage here ////////////
     var numberWeeks = 5;
-    var numberDays = 4;
-      
+    var numberDays = 4;  
+
     // Load number of tabs according to user input
     for( var i = 1; i <= numberWeeks; i++){
         // Create tab
@@ -52,7 +50,9 @@ $( document ).ready(function() {
             var newDayDiv = $("<div class='dayDiv'>");
 
             // Create day title
-            newDayDiv.append($(`<h3>Day ${j}</h3>`));
+            var newdayTitle = $("<div class='dayTitle'>");
+            newdayTitle.append($(`<h4>Day ${j}</h4>`))
+            newDayDiv.append(newdayTitle);
 
             // Create day div to contain workout
             var newWorkoutDiv = $("<div class='workoutDiv'></div>");
@@ -60,10 +60,6 @@ $( document ).ready(function() {
             /////////////////////////////////////////////////////////////
             /////////////// Add content for workouts here ///////////////
             /////////////////////////////////////////////////////////////
-
-            // Create switch to mark workout completed
-            // var newWorkoutSwitch = $(`<div class="switch tiny"><input class="switch-input" id="tinySwitch${j}" type="checkbox" name="exampleSwitch"><label class="switch-paddle" for="tinySwitch${j}"><span class="show-for-sr">Tiny Sandwiches Enabled</span></label></div>`);
-            // newWorkoutDiv.append(newWorkoutSwitch);
 
             // Create checkbox to mark workout completed
             var newCheckbox = $("<div class='checkbox'>");
@@ -78,10 +74,17 @@ $( document ).ready(function() {
         $(".tabs-content").append(newTabPanel);
     }
 
-    var exerciseName = $("<p class='exerciseName'>Exercise name here</p>");
-    var exerciseSetsReps = $("<p>5 sets x 5 reps</p>");
-    var exerciseDescription = $("<p>Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here </p>");
+    //////////// Start temporary exercise data to be updated ////////////
+    var newExerciseNameDiv = $("<div class='exerciseNameDiv'>");
+    newExerciseNameDiv.append($("<p class='exerciseName'>Exercise name here</p>"));
+    newExerciseNameDiv.append($("<p class='exerciseReps'>5 sets x 5 reps</p>"))
+    var newExerciseDesc = $("<div class='exerciseDescDiv'>");
+    newExerciseDesc.append($("<img class='exercisePhoto' src='https://images.pond5.com/beautiful-energetic-fitness-girl-doing-footage-099013654_iconl.jpeg'/>"))
+    newExerciseDesc.append($("<p class='exerciseDesc'>Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here </p>"));
+    
+    $(".workoutDiv").prepend(newExerciseDesc);
+    $(".workoutDiv").prepend(newExerciseNameDiv);
+    //////////// Finish temporary exercise data to be updated ////////////
 
-    $(".workoutDiv").prepend(exerciseName, exerciseSetsReps, exerciseDescription);
 
 });
