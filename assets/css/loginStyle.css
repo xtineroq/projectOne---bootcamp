@@ -7,7 +7,7 @@ body {
     flex-direction: column;
 }
 
-/* Quotes and buttons */
+/* Quotes and buttons container */
 .container {
     position: absolute;
     top: 50%;
@@ -16,6 +16,29 @@ body {
     width: 100%;
 }
 
+/* Quotes */
+blockquote {
+    margin: 100px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    border-left: none;
+}
+
+#quote {
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+/* Font Awesome Quotation Mark */
+.fas {
+    font-size: x-large;
+    color: black;
+}
+
+
+/* Application Title */
 header h2 {
     font-family: 'Rokkitt', serif;
     color: darkgrey;
@@ -26,35 +49,15 @@ header span {
     color: orange;
 }
 
-blockquote {
-    margin: 100px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-    border-left: none;
-}
-
-/* Font Awesome Quotation Mark */
-.fas {
-    font-size: x-large;
-    color: black;
-}
-
-#quote {
-    color: black;
-    font-weight: bold;
-    font-size: x-large;
-}
-
-.signIn {
+/* New user and Login button */
+.signInBtn {
     text-align: center;
 }
 
 /* Modal Style */
 .reveal {
     border-radius: 16px 16px 16px 16px;
-    /* background-color: rgba(0, 0, 0, 0.829); */
-    background-color: cadetblue;
+    background-color: rgba(0, 0, 0, 0.829);
     border: none;
     outline: none;
 }
@@ -64,6 +67,7 @@ blockquote {
 }
 
 .modalInput {
+    color: orange;
     width: 70%;
     display: inline-block;
     overflow: hidden;
@@ -91,9 +95,25 @@ blockquote {
     color: white;
 }
 
-.modalBtn {
+.modalBtn, #modalBtnNew {
     margin-top: 10px;
     width: 100%;
     font-weight: bold;
     font-size: 16px;
+}
+
+/* Modal Error Messages */
+#usernameError, #passwordError, #confirmPasswordError, #newLoginError, #currentLoginError {
+    color: red;
+    display: block;
+    text-align: center;
+}
+
+/* Quotes display for mobile */
+@media only screen and (max-width: 768px) {
+
+    blockquote {
+        margin: 0 0 1rem;
+    }
+
 }

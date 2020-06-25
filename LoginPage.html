@@ -42,7 +42,7 @@
             </div>
             <!-- NewUser&Login Button -->
             <div class="row">
-                <div class="signIn">
+                <div class="signInBtn">
                     <button class="button warning" type="button" data-open="newUserModal">New User</button>
                     <button class="button secondary" type="button" data-open="signInModal">LOGIN</button>
                 </div>
@@ -59,22 +59,27 @@
         <!-- Username -->
         <div><i class="fas fa-user modalIcon"></i>
             <input id="modalUsername" class="modalInput" type="text" placeholder="Username" required="">
-            <span class="error_form" id="usernameError"></span>
+            <br>
+            <span id="usernameError"></span>
         </div>
         <!-- Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
             <input id="modalPass" class="modalInput modalPass" type="text" placeholder="Password" data-tooltip class="top" tabindex="2"
                 title="Your password must have at least 8 characters" required="">
-            <span class="error_form" id="passwordError"></span>
+                <br>
+            <span id="passwordError"></span>
         </div>
         <!-- Confirm Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
             <input id="modalConfirmPass" class="modalInput" type="text" placeholder="Confirm Password" required="">
-            <span class="error_form" id="confirmPasswordError"></span>
+            <br>
+            <span id="confirmPasswordError"></span>
         </div>
 
         <!-- Login Button -->
-        <button class="button secondary modalBtn" type="button" data-open="login">LOGIN</button>
+        <button id="modalBtnNew" class="button secondary" type="button" data-open="login">LOGIN</button>
+        <br>
+        <span id="newLoginError"></span>
         <!-- Close by "x" -->
         <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -101,7 +106,9 @@
         </div>
 
         <!-- Login Button -->
-        <button class="button secondary modalBtn" type="button" data-open="login">LOGIN</button>
+        <button id="modalBtnCurrent" class="button secondary modalBtn" type="button" data-open="login">LOGIN</button>
+        <br>
+        <span id="currentLoginError"></span>
         <!-- Close by "x" -->
         <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -140,14 +147,48 @@
             }
         });
 
-        //Save New User Details
-        var $loginBtn = $(".modalBtn");
+        //jquery Current User Input Variables
+        var $loginBtnCurrent = $("#modalBtnCurrent");
+        var modalCurrentUser = $(".modalInput").eq(3);
+        var modalCurrentPass = $(".modalInput").eq(4);
+
+        //Current User Login Button
+        $loginBtnCurrent.on("click", function(){
+        
+        //Username and Password Input Values 
+        var currentUsername = modalCurrentUser.val();
+        var currentPassword = modalCurrentPass.val();
+
+        //Get local Storage Values
+        var localUsername = localStorage.getItem("Username");
+        var localPassword = localStorage.getItem("Password");
+        
+        if (currentUsername === localUsername && currentPassword === localPassword) {
+            $currentLoginError.hide();
+            window.location.replace("PersonalSetting.html");
+
+        } else if (localPassword === null && localUsername === null) {
+
+            $currentLoginError.html("You Do Not Have an Account");
+            $currentLoginError.show();
+
+        } else {
+
+            $currentLoginError.html("Incorrect Details");
+            $currentLoginError.show();
+        }
+
+        });
+
+       
+        //jquery New User Input Variables
+        var $loginBtnNew = $("#modalBtnNew");
         var $modalPass = $(".modalPass");
         var $modalInput = $(".modalInput");
-        var newPwd = $modalInput.eq(1).val();
-        var confirmPwd = $modalInput.eq(2).val();
 
-        $loginBtn.on("click", function(){
+
+        //New User Login button
+        $loginBtnNew.on("click", function(){
 
             usernameError = false;
             passwordError = false;
@@ -157,18 +198,18 @@
             checkPassword();
             checkConfirmPassword();
 
-            //Clear input values
-            // for (var i=0; i<5; i++) {
-            // $modalInput.eq(i).val("");
-            // }
-
             if (usernameError === false && passwordError === false && confirmPasswordError === false) {
+                //Store Username and Password
+                localStorage.setItem("Username", $modalUsername.val().trim());
+                localStorage.setItem("Password", $modalPass.val().trim());
+                $newLoginError.hide();
                 window.location.replace("PersonalSetting.html");
 
-               return true;
+                return true;
             } else {
-               alert("Please Fill the form Correctly");
-               return false;
+                $newLoginError.html("All Fields Must Be Entered Correctly");
+                $newLoginError.show();
+                return false;
             }
 
         });
@@ -180,15 +221,20 @@
         var $passwordError = $("#passwordError");
         var $modalConfirmPass = $("#modalConfirmPass");
         var $confirmPasswordError = $("#confirmPasswordError");
+        var $newLoginError = $("#newLoginError");
+        var $currentLoginError = $("#currentLoginError");
         //Boolean validation variable
         var usernameError = false;
         var passwordError = false;
         var confirmPasswordError = false;
 
-        //Hide Error Message
+        //Hide Error Messages
         $usernameError.hide();
         $passwordError.hide();
         $confirmPasswordError.hide();
+        $newLoginError.hide();
+        $currentLoginError.hide();
+
 
         //Function to check Username
         function checkUsername() {
@@ -248,7 +294,5 @@
     </script>
 
 </body>
-        <!-- // localStorage.setItem("Username", "");
 
-        // localStorage.setItem("Password", ""); -->
 </html>
