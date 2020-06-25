@@ -33,16 +33,13 @@
             <div class="row">
                 <blockquote id="author-block">
                     <i class="fas fa-quote-left"></i>
-                        <span id="quote"> 
-                            <!-- Lorem ipsum dolor    sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  -->
-                        </span>
+                    <span id="quote"></span>
                     <i class="fas fa-quote-right"></i>
                 </blockquote>
             </div>
             <!-- NewUser&Login Button -->
             <div class="row">
-                <div class="signIn">
+                <div class="signInBtn">
                     <button class="button warning" type="button" data-open="newUserModal">New User</button>
                     <button class="button secondary" type="button" data-open="signInModal">LOGIN</button>
                 </div>
@@ -58,20 +55,28 @@
 
         <!-- Username -->
         <div><i class="fas fa-user modalIcon"></i>
-            <input class="modalInput" type="text" placeholder="Username">
+            <input id="modalUsername" class="modalInput" type="text" placeholder="Username" required="">
+            <br>
+            <span id="usernameError"></span>
         </div>
         <!-- Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
-            <input class="modalInput" type="password" placeholder="Password" data-tooltip class="top" tabindex="2"
-                title="Your password must have at least 10 characters, a number">
+            <input id="modalPass" class="modalInput modalPass" type="text" placeholder="Password" data-tooltip
+                class="top" tabindex="2" title="Your password must have at least 8 characters" required="">
+            <br>
+            <span id="passwordError"></span>
         </div>
         <!-- Confirm Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
-            <input class="modalInput" type="password" aria-describedby="passwordHelpText"
-                placeholder="Confirm Password">
+            <input id="modalConfirmPass" class="modalInput" type="text" placeholder="Confirm Password" required="">
+            <br>
+            <span id="confirmPasswordError"></span>
         </div>
+
         <!-- Login Button -->
-        <button class="button secondary" id="modalBtn" type="button" data-open="login">LOGIN</button>
+        <button id="modalBtnNew" class="button secondary" type="button" data-open="login">LOGIN</button>
+        <br>
+        <span id="newLoginError"></span>
         <!-- Close by "x" -->
         <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -89,10 +94,18 @@
         </div>
         <!-- Password -->
         <div><i class="fas fa-unlock modalIcon"></i>
-            <input class="modalInput" type="password" placeholder="Password">
+            <input id="viewPassword" class="modalInput modalPass" type="password" placeholder="Password">
         </div>
+
+        <!-- Checkbox Show Password -->
+        <div class="checkboxModal">
+            <input id="checkPass" type="checkbox"><label id="checkboxModal">Show Password</label>
+        </div>
+
         <!-- Login Button -->
-        <button class="button secondary" id="modalBtn" type="button" data-open="login">Login</button>
+        <button id="modalBtnCurrent" class="button secondary modalBtn" type="button" data-open="login">LOGIN</button>
+        <br>
+        <span id="currentLoginError"></span>
         <!-- Close by "x" -->
         <button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -101,15 +114,13 @@
 
     <!-- jquery  script link -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- Compressed JavaScript -->
+    <!-- Compressed javaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-
-    <script>
-        //Foundation FrameWork to activate modal
-        $(document).foundation();
-    </script>
+    <!-- Quotes javascript file -->
     <script src="assets/javascript/Quotes.js"></script>
+    <!-- Quotes javascript file -->
+    <script src="assets/javascript/LoginScript.js"></script>
 
 </body>
 
