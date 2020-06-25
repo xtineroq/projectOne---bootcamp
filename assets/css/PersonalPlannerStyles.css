@@ -1,6 +1,6 @@
 /* Entire Settings Page */
 body {
-  background: url(../img/Background/LandingPage.jpg) top center;
+  background: url(../img/Background/PlannerPage.jpg) top center;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -30,7 +30,6 @@ main {
 
 /*************** Tabs ***************/
 #example-tabs {
-  /* background-color: rgba(255, 255, 255, 0.75); */
   border: none;
 }
 
@@ -40,17 +39,19 @@ main {
 
 .tabs a {
   color: white;
+  font-weight: 600;
 }
 
 .tabs-title > a:hover,
 .tabs-title > a:focus {
   background-color: rgba(255, 255, 255, 0.85);
   color: rgb(77, 77, 77);
+  
 }
 
 .tabs-title > a[aria-selected="true"] {
   background-color: white;
-  color: rgb(56, 56, 56);
+  color: orange;
 }
 
 .tabs-title {
@@ -64,7 +65,7 @@ main {
 }
 
 .dayDiv {
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(70, 70, 70, 0.1);
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -89,11 +90,3 @@ main {
   margin-top: 5px;
   transform: scale(1.5);
 }
-
-/* .switch-paddle {
-  border-radius: 5px;
-}
-
-input:checked ~ .switch-paddle {
-  background-color: orange;
-} */
