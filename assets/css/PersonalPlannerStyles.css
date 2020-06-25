@@ -30,15 +30,59 @@ main {
 
 /*************** Tabs ***************/
 #example-tabs {
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
   border: none;
+}
+
+.tabs {
+  background-color: transparent;
+}
+
+.tabs a {
+  color: white;
 }
 
 .tabs-title > a:hover,
 .tabs-title > a:focus {
   background-color: rgba(255, 255, 255, 0.85);
+  color: rgb(77, 77, 77);
 }
 
 .tabs-title > a[aria-selected="true"] {
   background-color: white;
+  color: rgb(56, 56, 56);
 }
+
+.tabs-title {
+  background-color: rgba(145, 145, 145, 0.85);
+}
+
+/*************** Tab Panels ***************/
+.exerciseName {
+  border: 2px solid rgba(145, 145, 145, 0.85);
+  padding: 5px 6px 5px 5px;
+  display: inline-block;
+}
+
+/*************** Checkbox ***************/
+.checkbox {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkbox label {
+  color: rgba(82, 82, 82);
+}
+
+[type="checkbox"] {
+  margin-top: 5px;
+  transform: scale(1.5);
+}
+
+/* .switch-paddle {
+  border-radius: 5px;
+}
+
+input:checked ~ .switch-paddle {
+  background-color: orange;
+} */

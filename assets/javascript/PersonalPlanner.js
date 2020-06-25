@@ -59,8 +59,13 @@ $( document ).ready(function() {
             /////////////////////////////////////////////////////////////
 
             // Create switch to mark workout completed
-            var newWorkoutSwitch = $('<div class="switch tiny"><input class="switch-input" id="tinySwitch" type="checkbox" name="exampleSwitch"><label class="switch-paddle" for="tinySwitch"><span class="show-for-sr">Tiny Sandwiches Enabled</span></label></div>');
-            newWorkoutDiv.append(newWorkoutSwitch);
+            // var newWorkoutSwitch = $(`<div class="switch tiny"><input class="switch-input" id="tinySwitch${j}" type="checkbox" name="exampleSwitch"><label class="switch-paddle" for="tinySwitch${j}"><span class="show-for-sr">Tiny Sandwiches Enabled</span></label></div>`);
+            // newWorkoutDiv.append(newWorkoutSwitch);
+
+            // Create checkbox to mark workout completed
+            var newCheckbox = $("<div class='checkbox'>");
+            newCheckbox.append($(`<input id="checkbox${j}" type="checkbox"><label for="checkbox${j}">Workout Completed</label>`))
+            newWorkoutDiv.append(newCheckbox);
 
             newTabPanel.append(newWorkoutDiv);
         }
@@ -69,9 +74,9 @@ $( document ).ready(function() {
         $(".tabs-content").append(newTabPanel);
     }
 
-    var exerciseName = $("<p>Exercise name here</p>");
+    var exerciseName = $("<p class='exerciseName'>Exercise name here</p>");
     var exerciseSetsReps = $("<p>5 sets x 5 reps</p>");
-    var exerciseDescription = $("<p>Exercise description here Exercise description here Exercise description here Exercise description here</p>");
+    var exerciseDescription = $("<p>Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here Exercise description here </p>");
 
     $(".workoutDiv").prepend(exerciseName, exerciseSetsReps, exerciseDescription);
 
