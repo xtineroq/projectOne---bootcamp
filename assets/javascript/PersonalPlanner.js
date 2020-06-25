@@ -48,8 +48,11 @@ $( document ).ready(function() {
         }
         // Load number of days per tab according to user input
         for( var j = 1; j <= numberDays; j++){
+            // Create div to contain the day
+            var newDayDiv = $("<div class='dayDiv'>");
+
             // Create day title
-            newTabPanel.append($(`<h3>Day ${j}</h3>`));
+            newDayDiv.append($(`<h3>Day ${j}</h3>`));
 
             // Create day div to contain workout
             var newWorkoutDiv = $("<div class='workoutDiv'></div>");
@@ -67,7 +70,8 @@ $( document ).ready(function() {
             newCheckbox.append($(`<input id="checkbox${j}" type="checkbox"><label for="checkbox${j}">Workout Completed</label>`))
             newWorkoutDiv.append(newCheckbox);
 
-            newTabPanel.append(newWorkoutDiv);
+            newDayDiv.append(newWorkoutDiv);
+            newTabPanel.append(newDayDiv);
         }
 
         // Display tab panel

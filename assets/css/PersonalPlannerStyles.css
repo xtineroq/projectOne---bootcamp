@@ -58,6 +58,17 @@ main {
 }
 
 /*************** Tab Panels ***************/
+.tabs-panel {
+  margin: 0px;
+  padding: 10px;
+}
+
+.dayDiv {
+  background-color: rgba(145, 145, 145, 0.1);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
 .exerciseName {
   border: 2px solid rgba(145, 145, 145, 0.85);
   padding: 5px 6px 5px 5px;
