@@ -5,7 +5,28 @@ $( document ).ready(function() {
 
     //////////// Grab user input from local storage here ////////////
     var numberWeeks = 5;
-    var numberDays = 4;  
+    var numberDays = 4;
+
+    // function to run when page loads
+    getUserName();
+
+    // retrieve username from local storage
+    function getUserName() {
+        var displayUN = localStorage.getItem("Username");
+        // display username to html
+        $("#userName").text(displayUN);
+    }
+
+    // event listeners for Continue button inside of Go Back to Settings Button
+    $("#continueBtn").on("click", function() {
+        // remove each setting in the local storage
+        localStorage.removeItem("days");
+        localStorage.removeItem("weeks");
+        localStorage.removeItem("muscleGroup");
+
+        // Window goes back to settings page
+        window.location.href = "PersonalSetting.html";
+    });
 
     // Load number of tabs according to user input
     for( var i = 1; i <= numberWeeks; i++){
