@@ -10,6 +10,7 @@ body {
 /* PFP Styling */
 
 /*************** Header ***************/
+
 header h2 {
   font-family: "Rokkitt", serif;
   color: darkgrey;
@@ -19,6 +20,49 @@ header h2 {
 header span {
   color: orange;
 }
+
+
+header .back-settings {
+  background-color: orange;
+  margin-top: 10px;
+  font-weight: 600;
+  color: black;
+}
+
+header .back-settings:hover {
+  background-color: #cc6600;
+}
+
+header .back-settings:focus{
+  background-color: #cc6600;
+}
+
+header p {
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+
+.reveal {
+  background-color: orange;
+  color: black;
+  outline: none;
+}
+
+#cancelBtn, #continueBtn {
+  margin-top: 20px;
+  background-color: #404040;
+  font-weight: 600;
+  color: white;
+}
+
+#cancelBtn:hover, #continueBtn:hover {
+  background-color: #cc6600;
+}
+
 
 /*************** Main ***************/
 main {
