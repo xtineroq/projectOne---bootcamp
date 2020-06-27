@@ -168,9 +168,7 @@ $(document).ready(function () {
         
     });
 
-});
 
-=======
 
     // global variables 
     //  first 3 are for actual use 
@@ -249,9 +247,6 @@ $(document).ready(function () {
     //used for holding the random choices to make up a leg day 
     var lowerWorkout = []
     
-
-    // var queryUrl = "https://wger.de//api/v2/exercisecategory/"
-    
     var queryUrl = "https://wger.de/api/v2/exercise/?language=2&status=2&limit=200"
 
     // Things to accomplish:
@@ -262,8 +257,7 @@ $(document).ready(function () {
       console.log(response);
       var exerciseObject = response.results
 
-     
-
+        //  running a for loop to put every exercise into a category 
         for (var i = 0; i < exerciseObject.length; i++ ){
             if(exerciseObject[i].category === 10) {
                 // console.log("this is abs " + exerciseObject[i].name)
@@ -312,8 +306,8 @@ $(document).ready(function () {
             // get length of each upperBody array
             var tempArray = []
 
+            // outer loop is used to cycle through the inner loop based on the number of days 
             for (b = 0; b < numDays; b++) {
-                console.log("i am the outer loop")
             
                 for (var i = 0; i < 2; i++) {
                     // //take 2 random arms exercises
@@ -338,6 +332,7 @@ $(document).ready(function () {
                 //clear upperArray
                 upperArray = [];
             } 
+
             // creating a heading for the uppebody object
             $("#upper").append($("<h1>", {
                 text: "Upperbody Workouts"
@@ -428,11 +423,6 @@ $(document).ready(function () {
             }
         }
 
-        // got to code this to pull random exercises 
-        // once i have 7 exercises add an extra back exercise 
-        // need two loops for randomizing and one of creating multiple days 
-        // then add the code to push the content to the screen 
-
         var getFullBody = function() {
             // used to get a random index position
             var rngA = Math.floor(Math.random()* aLength);
@@ -515,9 +505,10 @@ $(document).ready(function () {
         }
 
         getUpper();
-    
         getLower();
         getFullBody();
 
     });
+
+});
 
