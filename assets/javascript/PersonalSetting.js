@@ -90,6 +90,16 @@ $(document).ready(function () {
         // url used in the api call
     var queryUrl = "https://wger.de/api/v2/exercise/?language=2&status=2&limit=200"
 
+    // function to run when page loads
+    getUserName();
+
+    // retrieve username from local storage
+    function getUserName() {
+        var displayUN = localStorage.getItem("Username");
+        // display username to html
+        $("#userName").text(displayUN);
+    }
+    
     // Goal select box event
     // $(".myGoal").change(function() {
 
