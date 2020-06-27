@@ -4,8 +4,16 @@ $(document).foundation();
 $( document ).ready(function() {
 
     //////////// Grab user input from local storage here ////////////
+    // var numberWeeks = localStorage.getItem("weeks");
+    // var numberDays = localStorage.getItem("days"); 
     var numberWeeks = 5;
-    var numberDays = 4;  
+    var numberDays = 4;
+
+    var checkboxObj = {};
+    // Storing whether workouts have been marked completed or not
+    if( localStorage.getItem("checkboxString") ){
+        checkboxObj = JSON.parse(localStorage.getItem("checkboxString"));
+    }
 
     // Load number of tabs according to user input
     for( var i = 1; i <= numberWeeks; i++){
@@ -63,9 +71,32 @@ $( document ).ready(function() {
 
             // Create checkbox to mark workout completed
             var newCheckbox = $("<div class='checkbox'>");
-            newCheckbox.append($(`<input id="checkbox${j}" type="checkbox"><label for="checkbox${j}">Workout Completed</label>`))
+            var newCheckboxInput = $(`<input id="checkbox${j}" type="checkbox" class="checked"><label class="checked">Workout Completed</label>`);
+            
+            newCheckbox.append(newCheckboxInput)
             newWorkoutDiv.append(newCheckbox);
 
+            // Get local storage data to load styling for already completed workout
+            // If there's data about whether the workout is completed or not
+            if( checkboxObj[`panel${i}checkbox${j}`] ){
+                newCheckboxInput.attr("state", checkboxObj[`panel${i}checkbox${j}`]);
+                newDayDiv.attr("state", checkboxObj[`panel${i}checkbox${j}`]);
+                newCheckboxInput.attr("checked", checkboxObj[`panel${i}checkbox${j}`]);
+                console.log(`panel${i}checkbox${j}`)
+                console.log(checkboxObj[`panel${i}checkbox${j}`]);
+                console.log(newCheckboxInput.attr("checked"));
+                console.log("--------------------------")
+
+            // Otherwise the workout is not completed
+            } else {
+                newCheckboxInput.attr("state", "false");
+                newDayDiv.attr("state", "false");
+                console.log(newCheckboxInput)
+                console.log(newCheckboxInput.attr("checked"));
+                console.log("--------------------------")
+
+            }
+            
             newDayDiv.append(newWorkoutDiv);
             newTabPanel.append(newDayDiv);
         }
@@ -73,6 +104,7 @@ $( document ).ready(function() {
         // Display tab panel
         $(".tabs-content").append(newTabPanel);
     }
+        console.log(checkboxObj)
 
     //////////// Start temporary exercise data to be updated ////////////
     var newExerciseNameDiv = $("<div class='exerciseNameDiv'>");
@@ -85,6 +117,27 @@ $( document ).ready(function() {
     $(".workoutDiv").prepend(newExerciseDesc);
     $(".workoutDiv").prepend(newExerciseNameDiv);
     //////////// Finish temporary exercise data to be updated ////////////
+
+    // Event listener for when 'Workout Completed' checkbox is ticked
+    $(document).on("change", "input:checkbox" , function() {
+        var checkedState = $(this).attr("state");
+        var dayCheckedBox = $(this).closest(".dayDiv");
+        var weekDayID = $(this).closest(".tabs-panel").attr("id") + $(this).attr("id");
+        if (checkedState === "false") {
+            dayCheckedBox.attr("state", "true")
+            setAttr = $(this).attr("state", "true");
+            // Log this change in local storage
+            checkboxObj[weekDayID] = "true";
+            localStorage.setItem("checkboxString", JSON.stringify(checkboxObj));
+        } else if (checkedState === "true") {
+            setAttr = $(this).attr("state", "false");
+            dayCheckedBox.attr("state", "false")
+            // Log this change in local storage
+            checkboxObj[weekDayID] = "false";
+            localStorage.setItem("checkboxString", JSON.stringify(checkboxObj));
+        };
+    });
+
 
 
 });
