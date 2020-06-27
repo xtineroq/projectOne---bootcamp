@@ -67,7 +67,7 @@ $( document ).ready(function() {
 
             /////////////////////////////////////////////////////////////
             /////////////// Add content for workouts here ///////////////
-            /////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
 
             // Create checkbox to mark workout completed
             var newCheckbox = $("<div class='checkbox'>");
@@ -81,20 +81,12 @@ $( document ).ready(function() {
             if( checkboxObj[`panel${i}checkbox${j}`] ){
                 newCheckboxInput.attr("state", checkboxObj[`panel${i}checkbox${j}`]);
                 newDayDiv.attr("state", checkboxObj[`panel${i}checkbox${j}`]);
-                newCheckboxInput.attr("checked", checkboxObj[`panel${i}checkbox${j}`]);
-                console.log(`panel${i}checkbox${j}`)
-                console.log(checkboxObj[`panel${i}checkbox${j}`]);
-                console.log(newCheckboxInput.attr("checked"));
-                console.log("--------------------------")
+                newCheckboxInput.prop("checked", checkboxObj[`panel${i}checkbox${j}`]==="true");
 
             // Otherwise the workout is not completed
             } else {
                 newCheckboxInput.attr("state", "false");
                 newDayDiv.attr("state", "false");
-                console.log(newCheckboxInput)
-                console.log(newCheckboxInput.attr("checked"));
-                console.log("--------------------------")
-
             }
             
             newDayDiv.append(newWorkoutDiv);
