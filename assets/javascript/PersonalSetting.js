@@ -213,40 +213,46 @@ $(document).ready(function () {
             // }
 
             // Days: condition for check or x icon to appear
-            if (daysMoved === false) {
-                $("#liDays").removeAttr("class", "fi-check");
-                $("#liDays").attr("class", "fi-x");
-            } else {
-                $("#liDays").removeAttr("class", "fi-x");
-                $("#liDays").attr("class", "fi-check");
-            }
+            $("#liDays").attr("class", daysMoved ? "fi-check" : "fi-x");
+            // if (daysMoved === false) {
+            //     $("#liDays").removeAttr("class", "fi-check");
+            //     $("#liDays").attr("class", "fi-x");
+            // } else {
+            //     $("#liDays").removeAttr("class", "fi-x");
+            //     $("#liDays").attr("class", "fi-check");
+            // }
 
             // Weeks: condition for check or x icon to appear
-            if (weeksMoved === false) {
-                $("#liWeeks").removeAttr("class", "fi-check");
-                $("#liWeeks").attr("class", "fi-x");
-            } else {
-                $("#liWeeks").removeAttr("class", "fi-x");
-                $("#liWeeks").attr("class", "fi-check");
-            }
+            $("#liWeeks").attr("class", weeksMoved ? "fi-check" : "fi-x");
+            // if (weeksMoved === false) {
+            //     $("#liWeeks").removeAttr("class", "fi-check");
+            //     $("#liWeeks").attr("class", "fi-x");
+            // } else {
+            //     $("#liWeeks").removeAttr("class", "fi-x");
+            //     $("#liWeeks").attr("class", "fi-check");
+            // }
 
             // Muscle Group: condition for check or x icon to appear
-            if (muscleGroup === "") {
-                $("#liMuscle").removeAttr("class", "fi-check");
-                $("#liMuscle").attr("class", "fi-x");
-            } else {
-                $("#liMuscle").removeAttr("class", "fi-x");
-                $("#liMuscle").attr("class", "fi-check");
-            }
+            $("#liMuscle").attr("class", muscleGroup ? "fi-check" : "fi-x");
+            // if (muscleGroup === "") {
+            //     $("#liMuscle").removeAttr("class", "fi-check");
+            //     $("#liMuscle").attr("class", "fi-x");
+            // } else {
+            //     $("#liMuscle").removeAttr("class", "fi-x");
+            //     $("#liMuscle").attr("class", "fi-check");
+            // }
         
         // if one option has been selected from each category
         } else {
             // remove modal attribute
-            $(".GMPBtn").removeAttr("data-open", "settings-modal");
+            $(".GMPBtn").removeAttr("data-open");
 
             // remove previous workout from local storage
             localStorage.removeItem("workout")
 
+            // remove previous workout from local storage
+            localStorage.removeItem("checkboxString")
+            
             // calls function which contains the apiCall
             apiCall();
         }

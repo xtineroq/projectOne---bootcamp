@@ -41,7 +41,7 @@ var localPassword = localStorage.getItem("Password");
 
 if (currentUsername === localUsername && currentPassword === localPassword) {
     $currentLoginError.hide();
-    window.location.replace("PersonalSetting.html");
+    window.location.replace("PersonalPlanner.html");
 
 } else if (localPassword === null && localUsername === null) {
 
@@ -120,7 +120,7 @@ function checkUsername() {
        $usernameError.hide();
        $modalUsername.css("border-bottom","2px solid #34F458");
     } else {
-       $usernameError.html("Should contain only letters");
+       $usernameError.html("Should only contain letters");
        $usernameError.show();
        $modalUsername.css("border-bottom","2px solid #F90A0A");
        usernameError = true;
@@ -146,7 +146,7 @@ function checkUsername() {
     var password = $modalPass.val();
     var confirmPassword = $modalConfirmPass.val();
     if (password !== confirmPassword) {
-       $confirmPasswordError.html("Passwords Did not Matched");
+       $confirmPasswordError.html("Passwords Did Not Match");
        $confirmPasswordError.show();
        $modalConfirmPass.css("border-bottom","2px solid #F90A0A");
        confirmPasswordError = true;
