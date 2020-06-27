@@ -434,21 +434,22 @@ $(document).ready(function () {
 
             var getFullBody = function() {
                 // used to get a random index position
-                var rngA = Math.floor(Math.random()* aLength);
-                var rngC = Math.floor(Math.random()* cLength);
-                var rngB = Math.floor(Math.random()* bLength);
-                var rngS = Math.floor(Math.random()* sLength);
-                var rngCal = Math.floor(Math.random() * calLength);
-                var rngL = Math.floor(Math.random()*lLength);
-                var rngAbs = Math.floor(Math.random() * absLength);
+                
                 
                 // temp array so i can concat
                 var tempArray = []
 
                 for (var b = 0; b < numDays; b++) {
-
                 
                     for (var i = 0; i < 1; i++) {
+                        var rngA = Math.floor(Math.random()* aLength);
+                        var rngC = Math.floor(Math.random()* cLength);
+                        var rngB = Math.floor(Math.random()* bLength);
+                        var rngS = Math.floor(Math.random()* sLength);
+                        var rngCal = Math.floor(Math.random() * calLength);
+                        var rngL = Math.floor(Math.random()*lLength);
+                        var rngAbs = Math.floor(Math.random() * absLength);
+
                         //add one exercise from legs
                         fullBodyArray.push(legsArray[rngL])
 
@@ -468,7 +469,7 @@ $(document).ready(function () {
                         fullBodyArray.push(armsArray[rngA])
 
                         //add one exercise from abs
-                        fullBodyArray.push(absArray[i]);
+                        fullBodyArray.push(absArray[rngAbs]);
                     }
 
                     //take one extra back exercise to make 8 total exercises
@@ -479,8 +480,8 @@ $(document).ready(function () {
                 
                     // clear fullbody array
                     fullBodyArray = []
-
                 }
+            
 
                 // creating a heading for the lowerBody object
                 // $("#fullbody").append($("<h1>", {
@@ -513,8 +514,8 @@ $(document).ready(function () {
 
                 // code to set workout in local storage
                 localStorage.setItem("workout", JSON.stringify(workOut))
+            
             }
-        
 
             // if statements based on what buttons the user selects based on their plan 
             if (muscleGroup === "lower") {
