@@ -168,10 +168,7 @@ $(document).ready(function () {
         
     });
 
-});
 
-=======
->>>>>>> d0e39bd43560f572ac701cfbf0c47e25b6ed7af7
 
     // global variables 
     //  first 3 are for actual use 
@@ -513,4 +510,6 @@ $(document).ready(function () {
         getFullBody();
 
     });
+
+});
 
