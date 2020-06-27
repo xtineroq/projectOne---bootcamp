@@ -244,14 +244,18 @@ $(document).ready(function () {
             // remove modal attribute
             $(".GMPBtn").removeAttr("data-open", "settings-modal");
 
-            // switch window to Personal Planner
-            // window.location.href = "PersonalPlanner.html";
+            // remove previous workout from local storage
             localStorage.removeItem("workout")
+
+            // calls function which contains the apiCall
             apiCall();
         }
         
     });
 
+    var goToPlanner  = function () {
+        window.location.href="PersonalPlanner.html"
+    }
     // start of workout APi code --------------------------------------------------------------------------------------------------------------------------------------
 
     var apiCall = function() {
@@ -522,6 +526,10 @@ $(document).ready(function () {
             } else {
                 return
             }
+
+            
+        }).done(function() {
+            goToPlanner();
         });
 
     }
