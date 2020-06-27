@@ -1,76 +1,143 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-
+/* Entire Settings Page */
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  background: url(../img/Background/LandingPage.jpg) top center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-weight: 400;
-  font-size: 2.5em;
-  text-align: center;
-  margin-top: 5rem;
+/* PFP Styling */
+
+/*************** Header ***************/
+header h2 {
+  font-family: "Rokkitt", serif;
+  color: darkgrey;
+  padding-left: 15px;
 }
 
-a {
-  text-decoration: none;
+header span {
+  color: orange;
 }
 
-/*********************** Nav tabs ***********************/
-
-#container {
-  padding-left: 10vw;
-  padding-right: 10vw;
-  padding-top: 5vh;
-  padding-bottom: 20vh;
+/*************** Main ***************/
+main {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20px auto;
 }
 
-.tabs-nav ul {
-  margin: 0;
-  padding: 0;
+/*************** Tabs ***************/
+#example-tabs {
+  border: none;
 }
 
-.tabs-nav li {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.78);
-  color: #fefefe;
-  border-width: 1px 1px 0 1px;
-  border-style: solid;
-  border-color: #34495e;
-  margin-right: 5px;
+.tabs {
+  background-color: transparent;
 }
 
-.tabs-nav a {
-  display: block;
-  padding: 10px 15px;
+.tabs a {
+  color: white;
+  font-size: 16px;
   font-weight: bold;
-  color: #fff;
 }
 
-/*********************** Active tab ***********************/
-.tabs-nav li.active {
-  background: #fff;
-  color: #000;
+.tabs-title > a:hover,
+.tabs-title > a:focus {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: rgb(77, 77, 77);
 }
 
-.tabs-nav li.active a {
-  color: inherit;
+.tabs-title > a[aria-selected="true"] {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: rgb(56, 56, 56);
 }
 
-/*********************** Tab content ***********************/
+.tabs-title:not(.is-active) {
+  background-color: rgba(78, 78, 78, 0.75);
+}
+
+/*************** Tab Panels ***************/
 .tabs-content {
-  border: 1px solid #34495e;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.tabs-panel {
+  margin: 0px;
   padding: 10px;
-  background: #fff;
-  margin-top: -1px;
-  overflow: hidden;
+  color: white;
 }
 
-.tabs-content IMG {
-  margin-right: 10px;
+.dayDiv {
+  background-color: rgba(80, 80, 80, 0.9);
+  margin-top: 30px;
+  padding: 10px;
 }
 
-/************* Hide all but first content div *************/
-.tabs-content div:not(:first-child) {
-  display: none;
+.dayTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.dayDiv h4 {
+  background-image: linear-gradient(orange, rgb(194, 126, 0));
+  font-family: "Rokkitt", serif;
+  font-size: 24px;
+  transform: translateY(-25px);
+  padding: 1px 70px 2px 70px;
+  border-radius: 2px;
+}
+
+/*************** Workout div (exercise name, reps, image, description) ***************/
+.exerciseNameDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.exerciseName {
+  border: 2px solid orange;
+  padding: 3px 6px 5px 5px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.exerciseReps {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.exerciseDescDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.exerciseDescDiv img {
+  border-radius: 5px;
+  width: 20%;
+}
+
+.exerciseDesc {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/*************** Checkbox ***************/
+.checkbox {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkbox label {
+  color: white;
+  font-size: 12px;
+  display: flex;
+  padding-top: 2px;
+}
+
+[type="checkbox"] {
+  margin: 5px 0px;
+  transform: scale(1.5);
 }

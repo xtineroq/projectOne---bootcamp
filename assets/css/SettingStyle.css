@@ -1,0 +1,149 @@
+/* Entire Settings Page */
+body {
+    background: url(../img/Background/SettingsPage.jpg) top center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* PFP Styling */
+header h2 {
+    font-family: 'Rokkitt', serif;
+    color: darkgrey;
+    padding-left: 15px;
+}
+
+header span {
+    color: orange;
+}
+
+/* Main Container Styling */
+.settings-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background-color: rgb(64, 64, 64, 0.8);
+    padding: 3rem 3rem;
+}
+
+/* Container header styling */
+.settings-header {
+    color: #fff;
+    margin-left: 1rem;
+}
+
+/* Horizontal line styling */
+hr {
+    border: 2px solid #ffae00;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+    width: 25%;
+}
+
+/* Styling for all labels */
+.select-label {
+    color: #fff;
+    margin: auto;
+    padding: 1rem;
+}
+
+/* Goal Select box */
+.custom-select {
+    width: 100%;
+    margin: auto;
+}
+
+/* Styling for two sliders */
+.slider {
+    margin: auto;
+}
+
+.slider-handle {
+    background-color: #ffae00;
+}
+
+.slider-handle:hover {
+    background-color: #cc6600;
+}
+
+h5 {
+    margin: auto;
+}
+
+/* Styling for Muscle Group */
+.mGroup {
+    margin-top: 20px;
+}
+
+.MGButtons {
+    background-color: transparent;
+    border: 1px solid #ffae00;
+    color: #fff;
+    letter-spacing: 1px;
+    width: 140px;
+    padding: 1rem;
+    transition: all ease .4s;
+    margin-top: 5px;
+}
+
+.MGButtons:hover {
+    background-color: #ffae00;
+    border-color: #ffae00;
+}
+
+.MGButtons-clicked {
+    background-color: #ffae00;
+    border-color: #ffae00;
+    outline: none;
+}
+
+/* Styling for Get My Plan button */
+.GMPBtn {
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+    background-color: #ffae00;
+    border-color: #ffae00;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.GMPBtn:hover {
+    background-color: #cc6600;
+}
+
+/* */
+.reveal {
+    background-color: rgb(64, 64, 64, 0.9);
+    outline: none;
+}
+
+.reveal h1 {
+    color: #ffae00;
+}
+
+.lead {
+    color: #fff;
+}
+
+ul {
+    color: #fff;
+    list-style-type: none;
+}
+
+li i {
+    color: #ffae00;
+}
+
+/* Styling for progress bar */
+.progress {
+    display: none;
+    margin-top: 2rem;
+    padding: 10px;
+    border: 1px solid #fff;
+    width: 100%;
+}
+

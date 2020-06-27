@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Fitness Planner</title> 
+
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="../projectOne---bootcamp/assets/img/favicon/favicon.ico" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap" rel="stylesheet" />
+    <!-- Foundation Compressed CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <!-- Foundation Motion UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css"/>
+    <!-- Foundation Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"/>
+    <!-- PFP CSS -->
+    <link rel="stylesheet" href="../projectOne---bootcamp/assets/css/SettingStyle.css">
+</head>
+
+<body>
+
+    <!-- App Name -->
+    <header>
+        <h2><span>P</span>ersonal <span>F</span>itness <span>P</span>lanner</h2>
+    </header>
+
+    <!-- Settings Page -->
+    <main>
+        <div class="settings-container">
+
+            <h4 class="settings-header">Let's get started!</h4>
+            <hr>
+
+            <!-- Goal Select box -->
+            <!-- <div class="grid-x grid-padding-x">
+                <div class="cell medium-3 select-label">Choose your goal: </div>
+                <div class="cell medium-9 custom-select">
+                    <select class="myGoal">
+                        <option value="0">--- Select one ---</option>
+                        <option value="1">Goal 1</option>
+                        <option value="2">Goal 2</option>
+                        <option value="3">Goal 3</option>
+                        <option value="4">Goal 4</option>
+                        <option value="5">Goal 5</option>
+                    </select>
+                </div>
+            </div> -->
+
+            <!-- Days Slider -->
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-4 select-label">How many days: </div>
+                <div class="cell medium-7 slider" id="sliderDays" data-slider data-start="0" data-end="5">
+                    <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
+                    <span class="slider-fill" data-slider-fill></span>
+                    <input type="hidden">
+                </div>
+                <div class="cell medium-1 select-label">
+                    <h5 id="sliderDaysText"></h5>
+                </div>
+            </div>
+
+            <!-- Weeks Slider -->
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-4 select-label">How many weeks: </div>
+                <div class="cell medium-7 slider" id="sliderWeeks" data-slider data-start="0" data-end="5">
+                    <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
+                    <span class="slider-fill" data-slider-fill></span>
+                    <input type="hidden">
+                </div>
+                <div class="cell medium-1 select-label">
+                    <h5 id="sliderWeeksText"></h5>
+                </div>
+            </div>
+
+            <!-- Muscle Group Buttons -->
+            <div class="grid-x grid-padding-x mGroup">
+                <div class="cell medium-4 select-label">Muscle Group: </div>
+                <div class="cell medium-8">
+                    <button class="MGButtons" id="fullBodyBtn" type="button">Full Body</button>
+                    <button class="MGButtons" id="upperBtn" type="button">Upper</button>
+                    <button class="MGButtons" id="lowerBtn" type="button">Lower</button>
+                </div>
+            </div>
+
+            <!-- Get My Plan Button -->
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-12">
+                    <button class="GMPBtn" type="button"><i class="fi-clipboard-pencil"></i> Get My Plan</button>
+                </div>
+            </div>
+
+            <!-- No Muscle Group selected Modal -->
+            <div class="reveal" id="settings-modal" data-reveal>
+                <h1>Oops!</h1>
+                <p class="lead">Please select one option from each category:</p>
+                <ul>
+                    <!-- <li><i id="liGoal"></i> Goal</li> -->
+                    <li><i id="liDays"></i> Number of Days</li>
+                    <li><i id="liWeeks"></i> Number of Weeks</li>
+                    <li><i id="liMuscle"></i> Muscle Group</li>
+                </ul>
+                <button class="close-button" data-close aria-label="Close modal" type="button">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-12 progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                    <span class="progress-meter" style="width: 25%">
+                        <span class="progress-meter-text">25%</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- jquery  script link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- Foundation Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.util.touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.util.triggers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.util.motion.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.util.keyboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.toggler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.util.mediaQuery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.reveal.min.js"></script>
+    
+    <!-- PersonalSettings Js -->
+    <script src="assets/javascript/PersonalSetting.js"></script>
+
+</body>
+
+</html>

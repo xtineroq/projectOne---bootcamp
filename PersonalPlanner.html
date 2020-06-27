@@ -3,23 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabs</title>
+    <title>Personal Fitness Planner</title>
+    <!-- Fav Icon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/img/favicon/favicon.ico"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Foundation Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <!-- PFP CSS -->
     <link rel="stylesheet" href="./assets/css/PersonalPlannerStyles.css" />
   </head>
 
   <body>
     <header>
-      <h1>Personal Planner</h1>
+      <h2><span>P</span>ersonal <span>F</span>itness <span>P</span>lanner</h2>
     </header>
 
-    <div id="container">
-      <header class="tabs-nav">
-        <ul id="tabslist"></ul>
-      </header>
-      <section class="tabs-content"></section>
-    </div>
+    <main>
+      <ul class="tabs" data-tabs id="example-tabs"></ul>
+      <div class="tabs-content" data-tabs-content="example-tabs"></div>
+    </main>
 
+    <!-- jQuery  script link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compressed JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+    <!-- PFP JS -->
     <script src="./assets/javascript/PersonalPlanner.js"></script>
   </body>
 </html>
