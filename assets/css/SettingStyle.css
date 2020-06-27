@@ -18,6 +18,15 @@ header span {
     color: orange;
 }
 
+header p {
+    color: white;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+
 /* Main Container Styling */
 .settings-container {
     position: absolute;
