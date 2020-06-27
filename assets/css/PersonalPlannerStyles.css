@@ -173,7 +173,8 @@ div[state="false"] {
 
 .exerciseDesc {
   margin-left: 10px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 /*************** Checkbox ***************/
