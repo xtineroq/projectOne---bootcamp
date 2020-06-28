@@ -1,13 +1,13 @@
 
-$(document).foundation();
-
 $(document).ready(function () {
 
-    // Global variables
-    var selectedGoal = "";
+    $(document).foundation();
+
+    // Global variables for Settings page elements
+    // var selectedGoal = "";
     var muscleGroup = "";
-    var daysMoved = false;
-    var weeksMoved = false;
+    var days = "";
+    var weeks = "";
 
     // variable used by workout api call in determining how many times loops are run
     var numDays = 0;
@@ -115,20 +115,15 @@ $(document).ready(function () {
     $("#sliderDays").on("change changed.zf.slider", function() {
 
         // get value of selected days
-        var days = $(this).data().zfPlugin.$input[0].value;
+        days = $(this).data().zfPlugin.$input[0].value;
 
         // display slider value to h5 next to it
         $("#sliderDaysText").text(days);
 
-        // 
-        $("#sliderDays").on("change moved.zf.slider", function() {
-            daysMoved = true;
-        });
-
         // save days to localStorage
         localStorage.setItem("days", JSON.stringify(days));
         
-         numDays = parseInt(days)
+        numDays = parseInt(days);
 
     });
 
@@ -136,14 +131,10 @@ $(document).ready(function () {
     $("#sliderWeeks").on("change changed.zf.slider", function() {
 
         // get value of selected weeks
-        var weeks = $(this).data().zfPlugin.$input[0].value;
+        weeks = $(this).data().zfPlugin.$input[0].value;
 
         // display slider value to h5 next to it
         $("#sliderWeeksText").text(weeks);
-
-        $("#sliderWeeks").on("change moved.zf.slider", function() {
-            weeksMoved = true;
-        });
         
         // save weeks to localStorage
         localStorage.setItem("weeks", JSON.stringify(weeks));
@@ -157,7 +148,6 @@ $(document).ready(function () {
 
         // call function to save data to localStorage and add pressed effect
         saveMuscleGroup();
-
     });
 
     $("#upperBtn").on("click", function() {
@@ -202,9 +192,9 @@ $(document).ready(function () {
     // Get My Plan event listener
     $(".GMPBtn").on("click", function() {
 
-        // if user did not select a goal
-        if (daysMoved === false || weeksMoved === false || muscleGroup === "") {
-
+        // if user did not select an option from each category
+        if (days === "0" || weeks === "0" || muscleGroup === "") {
+            
             // add modal attribute
             $(".GMPBtn").attr("data-open", "settings-modal");
 
@@ -223,39 +213,48 @@ $(document).ready(function () {
             // }
 
             // Days: condition for check or x icon to appear
-            $("#liDays").attr("class", daysMoved ? "fi-check" : "fi-x");
-            // if (daysMoved === false) {
-            //     $("#liDays").removeAttr("class", "fi-check");
-            //     $("#liDays").attr("class", "fi-x");
-            // } else {
-            //     $("#liDays").removeAttr("class", "fi-x");
-            //     $("#liDays").attr("class", "fi-check");
-            // }
+            if (days === "0") {
+                $("#liGoal").removeAttr("class", "fi-check");
+                $("#liDays").attr("class", "fi-x");
+            } else {
+                $("#liGoal").removeAttr("class", "fi-check");
+                $("#liDays").attr("class", "fi-check");
+            }
 
             // Weeks: condition for check or x icon to appear
-            $("#liWeeks").attr("class", weeksMoved ? "fi-check" : "fi-x");
-            // if (weeksMoved === false) {
-            //     $("#liWeeks").removeAttr("class", "fi-check");
-            //     $("#liWeeks").attr("class", "fi-x");
-            // } else {
-            //     $("#liWeeks").removeAttr("class", "fi-x");
-            //     $("#liWeeks").attr("class", "fi-check");
-            // }
+            if (weeks === "0") {
+                $("#liGoal").removeAttr("class", "fi-check");
+                $("#liWeeks").attr("class", "fi-x");
+            } else {
+                $("#liWeeks").attr("class", "fi-check");
+            }
 
             // Muscle Group: condition for check or x icon to appear
-            $("#liMuscle").attr("class", muscleGroup ? "fi-check" : "fi-x");
-            // if (muscleGroup === "") {
-            //     $("#liMuscle").removeAttr("class", "fi-check");
-            //     $("#liMuscle").attr("class", "fi-x");
-            // } else {
-            //     $("#liMuscle").removeAttr("class", "fi-x");
-            //     $("#liMuscle").attr("class", "fi-check");
-            // }
+            if (muscleGroup === "") {
+                $("#liMuscle").attr("class", "fi-x");
+            } else {
+                $("#liMuscle").attr("class", "fi-check");
+            }
         
         // if one option has been selected from each category
         } else {
             // remove modal attribute
             $(".GMPBtn").removeAttr("data-open");
+
+            // display progress bar
+            // $(".progress").css("display", "inline");
+            
+            $(this).fadeOut(500); // Fades out submit button when it's clicked
+            setTimeout(function() { // Delays the next effect
+
+                $("#prog-bar").fadeIn(500); // fades in the progress bar
+                $("#prog-bar").animate({width : "100%"}, 3000); // animates the progress bar
+                $("#prog-text").animate({"margin-left": "40%" }, 3000); // animates the left margin of text
+                setTimeout(function() { // delays the next effect
+                    $(".progress").fadeOut(500); // fades out progress bar when animation completes
+                }, 2500);
+
+            }, 500);
 
             // remove previous workout from local storage
             localStorage.removeItem("workout")
@@ -269,7 +268,8 @@ $(document).ready(function () {
         
     });
 
-    var goToPlanner  = function () {
+
+    var goToPlanner  = function() {
         window.location.href="PersonalPlanner.html"
     }
     // start of workout APi code --------------------------------------------------------------------------------------------------------------------------------------
