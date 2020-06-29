@@ -29,19 +29,19 @@ SO THAT I have a personalized scheduled plan with exercises
 ## AppScreenshots
 
 SignIn Page
-<img src = "../assets/img/Screenshots/DesktopView.jpg">
+<img src = "./assets/img/Screenshots/DesktopView.jpg">
 
 Login screen
-<img src = "../assets/img/Screenshots/SignInPage.jpg">
+<img src = "./assets/img/Screenshots/SignInPage.jpg">
 
 Setting Page
-<img src = "../assets/img/Screenshots/SettingPage.jpg">
+<img src = "./assets/img/Screenshots/SettingPage.jpg">
 
 Personal Planner Page
-<img src = "../assets/img/Screenshots/PersonalPlanner.jpg">
+<img src = "./assets/img/Screenshots/PersonalPlanner.jpg">
 
 Mobile View <br>
-<img src = "../assets/img/Screenshots/MobileView.jpg">
+<img src = "./assets/img/Screenshots/MobileView.jpg">
 
 ## Installation
 
