@@ -1,4 +1,4 @@
-# projectOne---bootcamp
+# projectOne---Bootcamp
 
 ## Application & Repository Link
 
@@ -61,7 +61,7 @@ Reminder: ***Application is tied to the browser due to usage of local storage.**
 
 ## Testing
 
-Application was tested against the User Stories, once a functionality is completed it was moved to testing column on the kanban board. 
+Application was tested against the User Stories, once a functionality is completed it was moved to testing column on the Kanban board. 
 
 Developer who did not work on the user story than tests the functionality before moving it Done. 
 
