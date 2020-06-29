@@ -17,16 +17,16 @@ header h2 {
   padding-left: 15px;
 }
 
-header span {
+header span, #userName {
   color: orange;
 }
 
-
 header .back-settings {
-  background-color: orange;
+  background-color: rgb(194, 126, 0);
   margin-top: 10px;
   font-weight: 600;
-  color: black;
+  color: white;
+  border-radius: 2px;
 }
 
 header .back-settings:hover {
@@ -37,24 +37,37 @@ header .back-settings:focus{
   background-color: #cc6600;
 }
 
-header p {
+header a {
+  display: inline-block;
   color: white;
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
-  margin-left: 5px;
+}
+
+header a:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+
+  header a, header .back-settings {
+      margin-left: 18px;
+  }
 }
 
 .reveal {
-  background-color: orange;
+  background-color: rgb(255, 165, 0, 0.9);
+  border: none;
   color: black;
   outline: none;
 }
 
 #cancelBtn, #continueBtn {
+  display: block;
   margin-top: 20px;
-  background-color: #404040;
+  background-color: rgb(77, 77, 77);
   font-weight: 600;
   color: white;
 }
