@@ -37,7 +37,7 @@ Login screen
 Setting Page
 <img src = "./assets/img/Screenshots/SettingPage.jpg">
 
-Personal Planner Page
+PersonalPlanner Page
 <img src = "./assets/img/Screenshots/PersonalPlanner.jpg">
 
 Mobile View <br>
