@@ -99,17 +99,6 @@ $(document).ready(function () {
         // display username to html
         $("#userName").text(displayUN);
     }
-    
-    // Goal select box event
-    // $(".myGoal").change(function() {
-
-    //     // assign select box value to selectedGoal
-    //     selectedGoal = $(this, ":selected").val();
-
-    //     // save goal to LocalStorage
-    //     goal = selectedGoal;
-    //     localStorage.setItem("goal", JSON.stringify(goal));
-    // });
 
     // Event listener for Days Slider
     $("#sliderDays").on("change changed.zf.slider", function() {
@@ -202,15 +191,6 @@ $(document).ready(function () {
             $("#settings-modal").on("closeme.zf.reveal", function(e) {
                 Foundation.Motion.animateIn(e.target, "slide-in-right");
             });
-
-            // Goal: condition for check or x icon to appear
-            // if (selectedGoal === "" || selectedGoal === "0") {
-            //     $("#liGoal").removeAttr("class", "fi-check");
-            //     $("#liGoal").attr("class", "fi-x");
-            // } else {
-            //     $("#liGoal").removeAttr("class", "fi-x");
-            //     $("#liGoal").attr("class", "fi-check");
-            // }
 
             // Days: condition for check or x icon to appear
             if (days === "0") {
@@ -344,8 +324,6 @@ $(document).ready(function () {
                         upperArray.push(backArray[rngB])
                         upperArray.push(shouldersArray[rngS])
                     }
-                    // console.log("this is the combined random upperArray ----------------")
-                    // console.log(upperArray)
 
                     //want to add upperArray
                     workOut.upperBody.days[b].exercises = tempArray.concat(upperArray)
@@ -353,30 +331,6 @@ $(document).ready(function () {
                     //clear upperArray
                     upperArray = [];
                 } 
-
-                // creating a heading for the uppebody object
-                // $("#upper").append($("<h1>", {
-                //     text: "Upperbody Workouts"
-                // }))
-
-                // running a loop to go through the number of days the user enters
-                // for (var i = 0; i < numDays; i++) {
-                // var newHeading = $("<h3>", {
-                //     text: "Day " + (i + 1),
-                // })  
-                // $("#upper").append(newHeading, $("<br/>"))
-                //     workOut.upperBody.days[i].exercises.forEach(function(element) {
-                //         var name = element.name;
-                //         var description = element.description;
-
-                //         var nameDiv = $("<div>", {
-                //             text: name
-                //         })
-                //         var desDiv = $("<div>", {
-                //             html: description
-                //         })
-                //         $("#upper").append(nameDiv, desDiv)
-                //     })
 
                 // code to set workout in local storage
                 localStorage.setItem("workout", JSON.stringify(workOut))
@@ -418,30 +372,6 @@ $(document).ready(function () {
                 $("#lower").append($("<h1>", {
                     text: "Lowerbody Workouts"
                 }))
-
-                // running a loop to go through the number of days the user enters
-                // for (var i = 0; i < numDays; i++) {
-                    //creating the day heading
-                    // var newHeading = $("<h3>", {
-                    //     text: "Day " + (i + 1),
-                    // })  
-
-                    //appending heading 
-                    // $("#lower").append(newHeading, $("<br/>"))
-
-                    //running the foreach loop to create and populate content 
-                    // workOut.lowerBody.days[i].exercises.forEach(function(element) {
-                    //     var name = element.name;
-                    //     var description = element.description;
-
-                    //     var nameDiv = $("<div>", {
-                    //         text: name
-                    //     })
-                    //     var desDiv = $("<div>", {
-                    //         html: description
-                    //     })
-                    //     $("#lower").append(nameDiv, desDiv)
-                    // })
 
                 // code to set workout in local storage
                 localStorage.setItem("workout", JSON.stringify(workOut))
@@ -497,36 +427,6 @@ $(document).ready(function () {
                     // clear fullbody array
                     fullBodyArray = []
                 }
-            
-
-                // creating a heading for the lowerBody object
-                // $("#fullbody").append($("<h1>", {
-                //     text: "Fullbody Workouts"
-                // }))
-
-                // running a loop to go through the number of days the user enters
-                // for (var i = 0; i < numDays; i++) {
-                    //creating the day heading
-                    // var newHeading = $("<h3>", {
-                    //     text: "Day " + (i + 1),
-                    // })  
-
-                    //appending heading 
-                    // $("#fullbody").append(newHeading, $("<br/>"))
-
-                    //running the foreach loop to create and populate content 
-                    // workOut.fullBody.days[i].exercises.forEach(function(element) {
-                    //     var name = element.name;
-                    //     var description = element.description;
-
-                    //     var nameDiv = $("<div>", {
-                    //         text: name
-                    //     })
-                    //     var desDiv = $("<div>", {
-                    //         html: description
-                    //     })
-                    //     $("#fullbody").append(nameDiv, desDiv)
-                    // })
 
                 // code to set workout in local storage
                 localStorage.setItem("workout", JSON.stringify(workOut))
