@@ -18,17 +18,13 @@ header span, #userName {
     color: orange;
 }
 
-header a {
+header p {
     display: inline-block;
     color: white;
     margin-top: 10px;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-header a:hover {
-    color: white;
 }
 
 /* Main Container Styling */
@@ -47,7 +43,7 @@ header a:hover {
         margin-top: 30%;
     }
 
-    header a {
+    header p {
         margin-left: 15px;
     }
 }
