@@ -1,10 +1,10 @@
-# projectOne---bootcamp
+# Workout Manager
 
 ## Application & Repository Link
 
 ###### [Application Link](https://ben-j-st.github.io/Workout-Manager/index.html)
 
-###### [Repository Link](https://github.com/ben-j-st/projectOne---bootcamp)
+###### [Repository Link](https://github.com/ben-j-st/Workout-Manager)
 
 ## Content
 - [Overview](#Overview)
@@ -24,7 +24,7 @@ SO THAT I have a personalized scheduled plan with exercises
 
 ## AcceptanceCriteria
 
-###### [Link to User Stories](https://github.com/ben-j-st/projectOne---bootcamp/projects/1)
+###### [Link to User Stories](https://github.com/ben-j-st/Workout-Manager/projects/1)
 
 ## AppScreenshots
 
