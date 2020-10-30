@@ -2,7 +2,7 @@
 
 ## Application & Repository Link
 
-###### [Application Link](https://ben-j-st.github.io/projectOne---bootcamp/index.html)
+###### [Application Link](https://ben-j-st.github.io/Workout-Manager/index.html)
 
 ###### [Repository Link](https://github.com/ben-j-st/projectOne---bootcamp)
 
